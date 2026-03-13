@@ -1,0 +1,37 @@
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../register/view/register.dart';
+class DontHaveAccount extends StatelessWidget {
+  const DontHaveAccount({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "ليس لديك حساب ؟",
+          style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: width * 0.03),
+        ),
+        SizedBox(width: width*0.02,),
+        InkWell(
+          onTap: (){
+            Get.off(()=>const Register());
+          },
+          child: Text(
+            "إنشاء حساب",
+            style: TextStyle(
+                color: AppColors.specialPink,
+                fontWeight: FontWeight.bold,
+                fontSize: width * 0.032),
+          ),
+        ),
+      ],
+    );
+  }
+}

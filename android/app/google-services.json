@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "131501602315",
+    "project_id": "clothes-bdec8",
+    "storage_bucket": "clothes-bdec8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131501602315:android:3f0d004ce90f21b8b7390e",
+        "android_client_info": {
+          "package_name": "com.example.clothesget"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAooNkHQ2IIYW3sPYRw5d2Qmel4SDZRkgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
