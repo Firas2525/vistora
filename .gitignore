@@ -1,0 +1,20 @@
+# Firebase secrets
+*.json
+firebase-adminsdk*.json
+
+# Flutter
+.dart_tool/
+.packages
+build/
+
+# Android
+android/.gradle
+android/local.properties
+
+# iOS
+ios/Pods/
+
+# Keys
+*.jks
+*.keystore
+.env
