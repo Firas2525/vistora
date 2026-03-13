@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import '../core/constants/app_config.dart';
 import '../core/utils/shared_prefs_helper.dart';
 
+//comment
 class NotificationServices {
   static const String _apiKey = 'ADFRETYUUBFD!#@%*%4455iup!98SCZ@';
   static const String _appVersion = '1.0.0';
@@ -20,7 +21,7 @@ class NotificationServices {
 
   FirebaseMessaging messaging = FirebaseMessaging.instance;
   final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
-  FlutterLocalNotificationsPlugin();
+      FlutterLocalNotificationsPlugin();
 
   void requestNotificationPermission() async {
     NotificationSettings settings = await messaging.requestPermission(
@@ -58,16 +59,17 @@ class NotificationServices {
   }
 
   void initLocalNotifications() async {
-    var androidInitializationSettings =
-    const AndroidInitializationSettings('@mipmap/ic_launcher');
+    var androidInitializationSettings = const AndroidInitializationSettings(
+      '@mipmap/ic_launcher',
+    );
     var iosInitializationSettings = const DarwinInitializationSettings();
 
     var initializationSetting = InitializationSettings(
-        android: androidInitializationSettings, iOS: iosInitializationSettings);
-
-    await _flutterLocalNotificationsPlugin.initialize(
-      initializationSetting,
+      android: androidInitializationSettings,
+      iOS: iosInitializationSettings,
     );
+
+    await _flutterLocalNotificationsPlugin.initialize(initializationSetting);
   }
 
   void firebaseInit() {
@@ -98,22 +100,27 @@ class NotificationServices {
     }
 
     AndroidNotificationDetails androidNotificationDetails =
-    const AndroidNotificationDetails(
-        "high_importance_channel",
-        "high_importance_channel",
-        channelDescription: 'your channel description',
-        importance: Importance.max,
-        priority: Priority.max,
-        playSound: true,
-        ticker: 'ticker'
-    );
+        const AndroidNotificationDetails(
+          "high_importance_channel",
+          "high_importance_channel",
+          channelDescription: 'your channel description',
+          importance: Importance.max,
+          priority: Priority.max,
+          playSound: true,
+          ticker: 'ticker',
+        );
 
     DarwinNotificationDetails darwinNotificationDetails =
-    const DarwinNotificationDetails(
-        presentAlert: true, presentBadge: true, presentSound: true);
+        const DarwinNotificationDetails(
+          presentAlert: true,
+          presentBadge: true,
+          presentSound: true,
+        );
 
     NotificationDetails notificationDetails = NotificationDetails(
-        android: androidNotificationDetails, iOS: darwinNotificationDetails);
+      android: androidNotificationDetails,
+      iOS: darwinNotificationDetails,
+    );
 
     Future.delayed(Duration.zero, () async {
       await _flutterLocalNotificationsPlugin.show(
